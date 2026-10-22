@@ -21,6 +21,13 @@ namespace CapaModelo_Navegador
             if (string.IsNullOrWhiteSpace(Identificador) || !Regex.IsMatch(Identificador, @"^[A-Za-z0-9_$.]+$"))
                 // Si tiene algo raro o viene vacío, lanzamos un error para detener el proceso
                 throw new ArgumentException("El nombre de tabla o Columna no es válido.");
+
+            // Inicio cambio - Gabriel André Guillén Pocón - 0901-23-1998
+            // Cada parte del nombre (esquema, tabla o columna) debe respetar el límite de 64 caracteres de MySQL
+            foreach (string Parte in Identificador.Split('.'))
+                if (Parte.Length > 64)
+                    throw new ArgumentException("El nombre de tabla o Columna excede los 64 caracteres permitidos.");
+            // Fin cambio - Gabriel André Guillén Pocón - 0901-23-1998
         }
     }
 }
