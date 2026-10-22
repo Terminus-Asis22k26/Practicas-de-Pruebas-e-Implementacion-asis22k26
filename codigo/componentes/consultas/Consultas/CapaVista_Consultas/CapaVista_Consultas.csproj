@@ -36,6 +36,7 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="ClsSeleccionConsulta.cs" />
+    <Compile Include="ClsMensajesConsultas.cs" />
     <Compile Include="Componentes\ClsPanelConsultas.cs">
       <SubType>Component</SubType>
     </Compile>
