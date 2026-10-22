@@ -4,6 +4,7 @@
  */
 using System;
 using System.ComponentModel;
+using System.Data.Odbc;
 using System.Reflection;
 using System.Windows.Forms;
 
@@ -133,5 +134,18 @@ namespace CapaVista_BtnGuardar_Reporteador
                     MessageBoxIcon.Error);
             }
         }
+
+        // Inicio cambio - Gabriel André Guillén Pocón - 0901-23-1998
+        // Cuenta los reportes guardados para mostrarlos en el botón.
+        public int ReporteadorFuncContarReportes()
+        {
+            using (OdbcConnection Conexion = new OdbcConnection("Dsn=EmbutidosS.A"))
+            {
+                Conexion.Open();
+                OdbcCommand Comando = new OdbcCommand("SELECT COUNT(*) FROM tblReporte", Conexion);
+                return Convert.ToInt32(Comando.ExecuteScalar());
+            }
+        }
+        // Fin cambio - Gabriel André Guillén Pocón - 0901-23-1998
     }
 }
