@@ -39,5 +39,13 @@ namespace CapaControlador_Seguridad.Objetos_de_valor
                 PuedeImprimir = this.PuedeImprimir || Otro.PuedeImprimir
             };
         }
+
+        // Inicio cambio - Gabriel André Guillén Pocón - 0901-23-1998
+        // Indica si el usuario puede hacer al menos una acción sobre la aplicación.
+        public bool SeguridadFuncTieneAlgunPermiso()
+        {
+            return TieneAcceso && (PuedeInsertar || PuedeEditar || PuedeEliminar || PuedeImprimir);
+        }
+        // Fin cambio - Gabriel André Guillén Pocón - 0901-23-1998
     }
 }
