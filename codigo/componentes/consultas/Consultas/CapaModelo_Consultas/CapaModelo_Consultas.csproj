@@ -47,6 +47,8 @@
     <Compile Include="Contratos\IRepositorioConsultasGuardadas.cs" />
     <Compile Include="Contratos\IRepositorioEjecucionConsultas.cs" />
     <Compile Include="Contratos\IRepositorioMetadatos.cs" />
+    <Compile Include="Contratos\IRepositorioFiltros.cs" />
+    <Compile Include="Entidades\ClsFiltroConsulta.cs" />
     <Compile Include="Entidades\ClsCampoConsulta.cs" />
     <Compile Include="Entidades\ClsCondicion.cs" />
     <Compile Include="Entidades\ClsConsultaGuardada.cs" />
