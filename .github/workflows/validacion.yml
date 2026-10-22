@@ -1,0 +1,21 @@
+name: Validación de pull requests
+
+on:
+  pull_request:
+    branches: [main]
+
+jobs:
+  validar:
+    name: Validar proyecto
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Validar archivos modificados en el pull request
+        run: python .github/scripts/validar_proyecto.py --base origin/${{ github.base_ref }}
