@@ -55,6 +55,7 @@
     <Compile Include="ClsControladorConsultas.cs" />
     <Compile Include="ClsMetadatosDisenadorConsultas.cs" />
     <Compile Include="ClsErrorValidacion.cs" />
+    <Compile Include="NormalizadorConsulta.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
