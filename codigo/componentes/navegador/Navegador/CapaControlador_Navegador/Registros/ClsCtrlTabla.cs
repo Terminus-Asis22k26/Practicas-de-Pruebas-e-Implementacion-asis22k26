@@ -45,6 +45,15 @@ namespace CapaControlador_Navegador
         {
             return _Registros.NavegadorFuncFiltrarDatos(NombreTabla, Columna, Valor);
         }
+
+        // Inicio cambio - Gabriel André Guillén Pocón - 0901-23-1998
+        // Devuelve cuántos registros tiene la tabla.
+        public int NavegadorFuncContarRegistros(string NombreTabla)
+        {
+            DataTable Datos = _Registro.NavegadorFuncConsultarTodo(NombreTabla);
+            return Datos.Rows.Length;
+        }
+        // Fin cambio - Gabriel André Guillén Pocón - 0901-23-1998
     }
 }
 // Fin - Julio Roberto Rosales Mejía 0901-23-1426.
