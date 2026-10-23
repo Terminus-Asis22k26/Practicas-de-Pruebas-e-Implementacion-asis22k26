@@ -36,6 +36,12 @@ namespace CapaControlador_BtnGuardar_Reporteador
                     "La ruta del reporte es requerida.";
             }
 
+            // Inicio cambio - Gabriel André Guillén Pocón - 0901-23-1998
+            // Se quitan los espacios sobrantes antes de guardar
+            NombreReporte = NombreReporte.Trim();
+            RutaReporte = RutaReporte.Trim();
+            // Fin cambio - Gabriel André Guillén Pocón - 0901-23-1998
+
             string MensajeError;
 
             bool Exito =
