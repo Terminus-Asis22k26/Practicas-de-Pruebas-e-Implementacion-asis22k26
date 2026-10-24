@@ -19,5 +19,13 @@ namespace CapaControlador_Seguridad.Objetos_de_valor
     {
         public int IdRol { get; set; }
         public string NombreRol { get; set; }
+
+        // Inicio cambio - Gabriel André Guillén Pocón - 0901-23-1998
+        // Indica si el rol tiene un id y un nombre válidos.
+        public bool SeguridadFuncEsValido()
+        {
+            return IdRol > 0 && !string.IsNullOrWhiteSpace(NombreRol);
+        }
+        // Fin cambio - Gabriel André Guillén Pocón - 0901-23-1998
     }
 }
